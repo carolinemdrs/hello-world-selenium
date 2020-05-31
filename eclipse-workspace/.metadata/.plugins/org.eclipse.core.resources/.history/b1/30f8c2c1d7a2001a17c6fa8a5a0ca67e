@@ -1,0 +1,42 @@
+// pacotes
+
+package primeiroTesteSite;
+
+//bibliotecas
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.util.concurrent.TimeUnit;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+//classe
+public class Cursos {
+	//atributos / caracteristicas
+	String url; //endereço do site alvo
+	WebDriver driver; //objeto do Selenium webdriver
+	
+	//métodos/funções
+	@Before
+	public void iniciar () {
+		url = "https://www.iterasys.com.br";
+		System.setProperty("webdriver.chrome.driver",
+		"C:\\Users\\TEMP\\eclipse-workspace\\PrimeiroTesteSite\\drives\\chrome\\versao83\\chromedriver.exe");
+		driver = new ChromeDriver ();
+		driver.manage().timeouts().implicitlyWait(60000, TimeUnit.MILLISECONDS);
+		driver.manage().window().maximize();
+	}
+	
+	@After
+	public void finalizar () {
+		driver.quit();
+	}
+	
+	@Test  
+	public void consultar () {
+		
+		
+	}
+}
